@@ -5,7 +5,7 @@ assignment = raw_input("Please provide the assignment name: ")
 grade = raw_input("Please provide numeric grade: ")
 # print(name+" "+assignment+" "+grade)
 
-parsedGrade = int(grade)
+parsedGrade = float(grade)
 
 if(parsedGrade >= 90):
     print(name+", you received an A on assignment "+assignment+". Grade Details: You met all of the requirements.")
