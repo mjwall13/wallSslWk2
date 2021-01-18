@@ -5,7 +5,7 @@ var url = require('url');
 
 http.createServer(function(req,res){
 
-    fs.readFile("file",function(err,data){
+    fs.readFile("index",function(err,data){
 
         var parsed = url.parse(req.url);
         var filename = path.parse(parsed.pathname);
