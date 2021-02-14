@@ -5,22 +5,19 @@ var url = require("url");
 
 http.createServer(function(req,res){
 
-    fs.readFile("index",function(err,data){
+    // var parsed = url.parse(req.url);
+    // var filename = path.parse(parsed.pathname);
+    // console.log(filename);
 
-        var parsed = url.parse(req.url);
-        var filename = path.parse(parsed.pathname);
+    // if(filename.name == ""){
+    //     filen = "index";
+    // }else{
+    //     filen = filename.name;
+    // }
 
-        console.log(filename.name);
-        filen = filename.name;
-
-        if(filename.name == ""){
-            filen = "index"
-        }else{
-            filen = filename.name;
-        }
-
+    fs.readFile("index.html",function(err,data){
         res.writeHead(200);
         res.end(data);
     })
 
-}).listen("8080");
+}).listen("8080")
