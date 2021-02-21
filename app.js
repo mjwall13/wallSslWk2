@@ -9,17 +9,40 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-let ejs = require("ejs")
+const session = require("express-session");
+app.use(session({secret:"secret", saveUninitialized:true,resave:true}));
+var sess;
+
+const ejs = require("ejs")
 const router = express.Router();
 var app = express();
 app.set("view enjine", "ejs");
 app.engine("ejs", require("ejs")._express);
 
 router.get("/",function(req,res){
+    sess = req.session;  //start sessions
     res.render("index", {pagename: "Home"}); //views/index.ejs
 })
 router.get("/about",function(req,res){
+    sess = req.session;  //start sessions
     res.render("about", {pagename: "About"}); //views/about.ejs
+})
+
+router.get("/profile", function(req,res){
+    sess = req.session;  //start sessions
+    if(typeof(sess)=="undefined" || sess.loggedin !=true ){
+        var errors = ["Not a authenticated user"];
+        res.render("index", {pagename: "Home",errors:errors})
+    } else{
+        res.render("profile", {pagename: "Profile",sess:sess})
+    }
+});
+
+router.get("/logout", function(req,res){
+    sess=req.session;
+    sess.destroy(function(err){
+        res.redirect("/");
+    })
 })
 
 router.post("/login", function(req,res){
@@ -33,40 +56,17 @@ router.post("/login", function(req,res){
         errors.push("Password is required.")
     }
     if (regex.test(req.body.email)) {
-        res.redirect("/");
+        errors.push("Valid email required.")
     } 
+
+    //write your conditional here if matching username and password HOMEWORK
+
+    sess = req.session;
+    sess.loggedin = true;
+    res.render('profile', {pagename: "Profile",sess:sess});
 
 })
 
 app.use(express.static("public"));
 app.use("/",router);
 var server = app.listen("8080");
-
-
-
-
-
-// http.createServer(function(req,res){
-
-//     var parsed = req.url;
-//     var pathname = parsed.hash;
-
-//     if(pathname = "about"){
-//         fs.readFile("contact.html",function(err,data){
-//             res.writeHead(200);
-//             res.end(data);
-//         })
-//         }
-//     else if(pathname = "contact") {
-//         fs.readFile("contact.html",function(err,data){
-//             res.writeHead(200);
-//             res.end(data);
-//         })
-    
-//     }else{
-//         fs.readFile("index.html",function(err,data){
-//             res.writeHead(200);
-//             res.end(data);
-//         })
-//     }
-// }).listen("8080")
