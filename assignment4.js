@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 // var http = require('htt');
 var http = require('http');
 
@@ -20,7 +22,7 @@ function callHttpbin() {
       var result = JSON.parse(str);
 
       myips = result.origin;
-      resolve()
+      resolve();
      });
      }
     );
@@ -42,7 +44,6 @@ async function executeAsyncTask(){
   
   let result = await promise;
 
-
   console.log(valueB+" "+valueA)
 // Output Here is my IP address 149.24.160.1, 149.24.160.1
-}
+} executeAsyncTask();
