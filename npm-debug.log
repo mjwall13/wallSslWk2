@@ -2,65 +2,65 @@
 1 verbose cli [ '/usr/bin/nodejs',
 1 verbose cli   '/usr/bin/npm',
 1 verbose cli   'install',
-1 verbose cli   '--save',
-1 verbose cli   'parse-url' ]
+1 verbose cli   '-g',
+1 verbose cli   'ejs',
+1 verbose cli   '--save' ]
 2 info using npm@1.3.10
 3 info using node@v0.10.25
-4 verbose readDependencies using package.json deps
-5 verbose cache add [ 'parse-url', null ]
-6 verbose cache add name=undefined spec="parse-url" args=["parse-url",null]
-7 verbose parsed url { protocol: null,
-7 verbose parsed url   slashes: null,
-7 verbose parsed url   auth: null,
-7 verbose parsed url   host: null,
-7 verbose parsed url   port: null,
-7 verbose parsed url   hostname: null,
-7 verbose parsed url   hash: null,
-7 verbose parsed url   search: null,
-7 verbose parsed url   query: null,
-7 verbose parsed url   pathname: 'parse-url',
-7 verbose parsed url   path: 'parse-url',
-7 verbose parsed url   href: 'parse-url' }
-8 silly lockFile 87426495-parse-url parse-url
-9 verbose lock parse-url /home/vagrant/.npm/87426495-parse-url.lock
-10 silly lockFile 87426495-parse-url parse-url
-11 silly lockFile 87426495-parse-url parse-url
-12 verbose addNamed [ 'parse-url', '' ]
-13 verbose addNamed [ null, '*' ]
-14 silly lockFile 765cb538-parse-url parse-url@
-15 verbose lock parse-url@ /home/vagrant/.npm/765cb538-parse-url.lock
-16 silly addNameRange { name: 'parse-url', range: '*', hasData: false }
-17 verbose url raw parse-url
-18 verbose url resolving [ 'https://registry.npmjs.org/', './parse-url' ]
-19 verbose url resolved https://registry.npmjs.org/parse-url
-20 info trying registry request attempt 1 at 17:25:43
-21 http GET https://registry.npmjs.org/parse-url
-22 info retry will retry, error on last attempt: Error: CERT_UNTRUSTED
-23 info trying registry request attempt 2 at 17:25:53
-24 http GET https://registry.npmjs.org/parse-url
-25 info retry will retry, error on last attempt: Error: CERT_UNTRUSTED
-26 info trying registry request attempt 3 at 17:26:53
-27 http GET https://registry.npmjs.org/parse-url
-28 silly lockFile 765cb538-parse-url parse-url@
-29 silly lockFile 765cb538-parse-url parse-url@
-30 error Error: CERT_UNTRUSTED
-30 error     at SecurePair.<anonymous> (tls.js:1370:32)
-30 error     at SecurePair.EventEmitter.emit (events.js:92:17)
-30 error     at SecurePair.maybeInitFinished (tls.js:982:10)
-30 error     at CleartextStream.read [as _read] (tls.js:469:13)
-30 error     at CleartextStream.Readable.read (_stream_readable.js:320:10)
-30 error     at EncryptedStream.write [as _write] (tls.js:366:25)
-30 error     at doWrite (_stream_writable.js:223:10)
-30 error     at writeOrBuffer (_stream_writable.js:213:5)
-30 error     at EncryptedStream.Writable.write (_stream_writable.js:180:11)
-30 error     at write (_stream_readable.js:583:24)
-31 error If you need help, you may report this log at:
-31 error     <http://github.com/isaacs/npm/issues>
-31 error or email it to:
-31 error     <npm-@googlegroups.com>
-32 error System Linux 3.13.0-170-generic
-33 error command "/usr/bin/nodejs" "/usr/bin/npm" "install" "--save" "parse-url"
-34 error cwd /var/www/html
-35 error node -v v0.10.25
-36 error npm -v 1.3.10
-37 verbose exit [ 1, true ]
+4 verbose cache add [ 'ejs', null ]
+5 verbose cache add name=undefined spec="ejs" args=["ejs",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'ejs',
+6 verbose parsed url   path: 'ejs',
+6 verbose parsed url   href: 'ejs' }
+7 silly lockFile 75eeca8f-ejs ejs
+8 verbose lock ejs /home/vagrant/.npm/75eeca8f-ejs.lock
+9 silly lockFile 75eeca8f-ejs ejs
+10 silly lockFile 75eeca8f-ejs ejs
+11 verbose addNamed [ 'ejs', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile bcdf6e5f-ejs ejs@
+14 verbose lock ejs@ /home/vagrant/.npm/bcdf6e5f-ejs.lock
+15 silly addNameRange { name: 'ejs', range: '*', hasData: false }
+16 verbose url raw ejs
+17 verbose url resolving [ 'https://registry.npmjs.org/', './ejs' ]
+18 verbose url resolved https://registry.npmjs.org/ejs
+19 info trying registry request attempt 1 at 17:17:27
+20 http GET https://registry.npmjs.org/ejs
+21 info retry will retry, error on last attempt: Error: CERT_UNTRUSTED
+22 info trying registry request attempt 2 at 17:17:38
+23 http GET https://registry.npmjs.org/ejs
+24 info retry will retry, error on last attempt: Error: CERT_UNTRUSTED
+25 info trying registry request attempt 3 at 17:18:38
+26 http GET https://registry.npmjs.org/ejs
+27 silly lockFile bcdf6e5f-ejs ejs@
+28 silly lockFile bcdf6e5f-ejs ejs@
+29 error Error: CERT_UNTRUSTED
+29 error     at SecurePair.<anonymous> (tls.js:1370:32)
+29 error     at SecurePair.EventEmitter.emit (events.js:92:17)
+29 error     at SecurePair.maybeInitFinished (tls.js:982:10)
+29 error     at CleartextStream.read [as _read] (tls.js:469:13)
+29 error     at CleartextStream.Readable.read (_stream_readable.js:320:10)
+29 error     at EncryptedStream.write [as _write] (tls.js:366:25)
+29 error     at doWrite (_stream_writable.js:223:10)
+29 error     at writeOrBuffer (_stream_writable.js:213:5)
+29 error     at EncryptedStream.Writable.write (_stream_writable.js:180:11)
+29 error     at write (_stream_readable.js:583:24)
+30 error If you need help, you may report this log at:
+30 error     <http://github.com/isaacs/npm/issues>
+30 error or email it to:
+30 error     <npm-@googlegroups.com>
+31 error System Linux 3.13.0-170-generic
+32 error command "/usr/bin/nodejs" "/usr/bin/npm" "install" "-g" "ejs" "--save"
+33 error cwd /var/www/html
+34 error node -v v0.10.25
+35 error npm -v 1.3.10
+36 verbose exit [ 1, true ]
